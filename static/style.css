@@ -1,0 +1,325 @@
+/* ===================================================================
+   Customer Loyalty Dashboard – Light Theme (White + Sky Blue + Lime Green)
+   =================================================================== */
+
+/* ---------- Variables ---------- */
+:root {
+    --bg-primary: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F1F5F9;
+    --primary: #0EA5E9;
+    --primary-light: #E0F2FE;
+    --accent: #65A30D;
+    --accent-light: #ECFCCB;
+    --purple: #7C3AED;
+    --gold: #CA8A04;
+    --danger: #DC2626;
+    --text: #1E293B;
+    --text-muted: #64748B;
+    --border: #E2E8F0;
+    --radius: 16px;
+    --shadow: 0 4px 20px rgba(14, 165, 233, 0.08);
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+/* ---------- Header ---------- */
+#dashboard-header {
+    background: linear-gradient(135deg, #0EA5E9 0%, #38BDF8 40%, #65A30D 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 2.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-icon {
+    font-size: 2.5rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+#dashboard-header h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #FFFFFF;
+}
+
+#dashboard-header p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    margin-top: 0.15rem;
+}
+
+/* ---------- Main ---------- */
+#dashboard-main {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.75rem 2rem;
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+    animation: fadeUp 0.6s ease-out both;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.12);
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.2s; }
+.card:nth-child(4) { animation-delay: 0.3s; }
+.card:nth-child(5) { animation-delay: 0.4s; }
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.card-header h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.card-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+}
+
+/* ---------- Badges ---------- */
+.badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+    background: var(--primary-light);
+    color: var(--primary);
+    letter-spacing: 0.02em;
+}
+
+.badge.accent { background: var(--accent-light); color: var(--accent); }
+.badge.green  { background: var(--accent-light); color: var(--accent); }
+.badge.purple { background: #EDE9FE; color: var(--purple); }
+.badge.gold   { background: #FEF9C3; color: var(--gold); }
+
+/* ---------- Tables ---------- */
+.table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+thead {
+    background: var(--primary-light);
+}
+
+th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--primary);
+    white-space: nowrap;
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    color: var(--text);
+}
+
+tbody tr {
+    transition: background var(--transition);
+}
+
+tbody tr:hover {
+    background: rgba(14, 165, 233, 0.05);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ---------- Charts ---------- */
+.chart-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.chart-box {
+    background: #F8FAFC;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.chart-box.single {
+    margin-top: 1rem;
+}
+
+.chart-box h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+canvas {
+    width: 100% !important;
+}
+
+/* ---------- Gauge Container ---------- */
+#gauge-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.gauge-card {
+    background: #F8FAFC;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform var(--transition), border-color var(--transition);
+}
+
+.gauge-card:hover {
+    transform: scale(1.03);
+    border-color: var(--primary);
+}
+
+.gauge-card canvas {
+    display: block;
+    margin: 0 auto 0.5rem;
+}
+
+.gauge-card .gauge-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.15rem;
+}
+
+.gauge-card .gauge-segment {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 50px;
+    display: inline-block;
+    margin-top: 0.25rem;
+}
+
+.gauge-segment.highly-loyal   { background: var(--accent-light); color: var(--accent); }
+.gauge-segment.potential-loyal { background: var(--primary-light); color: var(--primary); }
+.gauge-segment.at-risk        { background: #FEE2E2; color: var(--danger); }
+.gauge-segment.new-customer   { background: #FEF9C3; color: var(--gold); }
+
+/* ---------- Insights ---------- */
+#insights-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1rem;
+}
+
+.insight-card {
+    background: #F8FAFC;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text);
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.insight-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(14, 165, 233, 0.1);
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    #dashboard-header { padding: 1.25rem 1rem; }
+    .header-content { flex-direction: column; text-align: center; }
+    #dashboard-header h1 { font-size: 1.3rem; }
+    #dashboard-main { padding: 0 1rem; }
+    .chart-row { grid-template-columns: 1fr; }
+    #gauge-container { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+    #insights-list { grid-template-columns: 1fr; }
+}

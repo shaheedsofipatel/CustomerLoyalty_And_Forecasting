@@ -1,0 +1,101 @@
+Customer_ID,Age,Purchase_Frequency,Avg_Spending,Total_Purchases,Last_Purchase_Days,Favorite_Category,New_Product_Purchased
+C001,58,4,17.25,21,63,Clothing,Yes
+C002,24,22,224.79,161,23,Books,Yes
+C003,19,3,73.41,35,155,Electronics,No
+C004,63,21,213.38,128,57,Sports,Yes
+C005,18,25,243.69,241,88,Groceries,Yes
+C006,39,4,36.9,10,92,Home & Kitchen,No
+C007,34,26,22.6,261,138,Electronics,No
+C008,42,3,170.09,26,148,Clothing,No
+C009,20,22,76.09,96,21,Home & Kitchen,Yes
+C010,24,13,90.61,106,42,Groceries,Yes
+C011,60,9,213.53,96,166,Electronics,No
+C012,28,18,221.45,59,119,Sports,Yes
+C013,58,23,171.52,198,84,Home & Kitchen,No
+C014,21,8,248.32,48,103,Groceries,Yes
+C015,54,29,218.2,137,168,Sports,Yes
+C016,59,15,51.43,50,64,Beauty,No
+C017,34,24,179.53,228,93,Clothing,No
+C018,26,17,153.12,29,29,Clothing,Yes
+C019,61,14,182.96,112,98,Books,No
+C020,51,9,291.61,10,175,Beauty,Yes
+C021,52,25,87.38,199,29,Groceries,Yes
+C022,47,1,286.61,12,68,Books,No
+C023,50,30,40.86,350,77,Home & Kitchen,Yes
+C024,56,7,54.32,27,139,Home & Kitchen,No
+C025,18,20,104.01,24,29,Groceries,No
+C026,37,8,26.8,80,21,Electronics,No
+C027,22,25,164.48,89,33,Beauty,Yes
+C028,53,6,86.87,60,55,Books,No
+C029,62,7,216.76,58,172,Beauty,No
+C030,51,15,45.09,72,17,Groceries,Yes
+C031,53,8,180.65,8,19,Beauty,No
+C032,32,3,272.57,24,19,Books,Yes
+C033,60,16,72.13,49,147,Books,No
+C034,48,26,128.05,74,25,Beauty,Yes
+C035,45,14,145.44,27,173,Beauty,No
+C036,24,2,126.76,12,28,Clothing,Yes
+C037,52,15,50.65,61,72,Sports,Yes
+C038,22,15,244.33,155,26,Electronics,Yes
+C039,52,27,14.28,74,61,Clothing,Yes
+C040,48,7,260.75,14,43,Sports,Yes
+C041,42,9,278.69,67,74,Sports,No
+C042,64,26,171.17,275,40,Clothing,Yes
+C043,21,19,223.36,34,81,Electronics,Yes
+C044,48,17,276.62,152,41,Electronics,No
+C045,23,28,63.89,332,18,Beauty,Yes
+C046,43,4,283.06,40,64,Books,No
+C047,57,3,131.58,36,81,Groceries,Yes
+C048,63,11,79.22,61,34,Beauty,No
+C049,47,11,279.42,130,19,Electronics,Yes
+C050,54,4,31.25,17,130,Groceries,Yes
+C051,40,29,29.95,154,95,Groceries,Yes
+C052,52,23,97.73,274,168,Books,Yes
+C053,53,10,280.21,23,35,Groceries,Yes
+C054,24,24,170.43,163,73,Books,Yes
+C055,39,7,209.37,40,130,Sports,Yes
+C056,21,3,193.94,20,12,Electronics,Yes
+C057,26,21,294.14,62,114,Books,Yes
+C058,53,1,42.44,12,39,Books,Yes
+C059,41,19,170.23,129,33,Electronics,Yes
+C060,20,29,113.76,156,171,Electronics,Yes
+C061,53,29,263.67,346,40,Clothing,Yes
+C062,29,29,129.57,120,86,Home & Kitchen,No
+C063,60,28,223.17,155,69,Clothing,Yes
+C064,24,13,262.93,133,57,Clothing,No
+C065,47,12,98.51,70,58,Electronics,No
+C066,43,11,90.79,19,72,Groceries,No
+C067,43,22,294.53,159,85,Electronics,Yes
+C068,34,6,178.37,39,10,Electronics,No
+C069,40,24,238.06,247,156,Books,Yes
+C070,54,7,83.87,62,1,Books,No
+C071,52,22,218.63,211,172,Clothing,Yes
+C072,22,22,277.02,181,81,Beauty,Yes
+C073,64,29,97.09,187,171,Sports,Yes
+C074,62,10,170.78,34,108,Beauty,No
+C075,61,24,271.81,178,104,Books,Yes
+C076,37,10,70.95,110,149,Books,No
+C077,47,15,138.23,69,131,Sports,No
+C078,65,6,201.07,42,132,Beauty,No
+C079,39,3,247.34,18,173,Groceries,Yes
+C080,30,5,17.08,20,122,Books,No
+C081,22,15,130.19,176,148,Clothing,No
+C082,42,16,125.9,53,168,Beauty,Yes
+C083,24,25,133.29,115,179,Books,Yes
+C084,53,8,276.07,23,117,Clothing,No
+C085,60,17,296.49,169,82,Home & Kitchen,No
+C086,57,27,218.59,285,110,Home & Kitchen,No
+C087,46,29,56.16,272,116,Groceries,No
+C088,58,9,232.09,75,125,Beauty,Yes
+C089,46,3,216.93,18,70,Groceries,Yes
+C090,52,3,50.13,17,99,Beauty,Yes
+C091,31,3,130.31,24,139,Sports,No
+C092,31,27,131.84,37,148,Sports,Yes
+C093,40,10,228.51,119,108,Books,No
+C094,52,26,184.94,138,125,Clothing,Yes
+C095,49,1,122.77,11,174,Home & Kitchen,No
+C096,28,27,145.54,92,160,Books,Yes
+C097,43,19,173.67,25,22,Beauty,Yes
+C098,47,6,24.58,54,84,Clothing,No
+C099,39,25,265.1,167,108,Groceries,Yes
+C100,48,1,227.22,1,90,Clothing,No
