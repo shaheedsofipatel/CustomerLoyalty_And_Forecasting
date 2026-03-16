@@ -372,4 +372,25 @@ async function init() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", () => {
+    init();
+
+    // ─── Nav scroll-spy ───
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section[id]");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach((l) => l.classList.remove("active"));
+                    const link = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+                    if (link) link.classList.add("active");
+                }
+            });
+        },
+        { rootMargin: "-40% 0px -55% 0px" }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+});
