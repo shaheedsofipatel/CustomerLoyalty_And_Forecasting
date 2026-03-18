@@ -331,7 +331,7 @@ function renderInterestBarChart(data) {
 function renderInsights(data) {
     const container = $("#insights-list");
     container.innerHTML = data
-        .map((text) => `<div class="insight-card">${text}</div>`)
+        .map((text, i) => `<div class="insight-card"><span class="insight-number">${i + 1}</span>${text}</div>`)
         .join("");
 }
 
