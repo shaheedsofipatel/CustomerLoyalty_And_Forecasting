@@ -14,25 +14,26 @@
 <body>
     <!-- ============== HEADER ============== -->
     <header id="dashboard-header">
-        <div class="header-content">
-            <img src="/static/logo.png" alt="SpendSight Logo" class="header-logo" />
-            <h1>SpendSight</h1>
-            <p>Predict future spending and product interests using predictive analytics.</p>
+        <div class="header-bar">
+            <a href="#" class="header-brand" id="brand-link">
+                <img src="/static/logo.png" alt="SpendSight Logo" class="header-logo" />
+                <h1>SpendSight</h1>
+            </a>
+            <nav id="main-nav">
+                <a href="#section-dataset" class="nav-link active">Dataset</a>
+                <a href="#section-spending" class="nav-link">Forecast</a>
+                <a href="#section-loyalty" class="nav-link">Loyalty</a>
+                <a href="#section-interest" class="nav-link">Interest</a>
+                <a href="#section-insights" class="nav-link">Insights</a>
+            </nav>
         </div>
-        <nav id="main-nav">
-            <a href="#section-dataset" class="nav-link active">📋 Dataset</a>
-            <a href="#section-spending" class="nav-link">📈 Forecast</a>
-            <a href="#section-loyalty" class="nav-link">🏆 Loyalty</a>
-            <a href="#section-interest" class="nav-link">🛒 Interest</a>
-            <a href="#section-insights" class="nav-link">💡 Insights</a>
-        </nav>
     </header>
 
     <main id="dashboard-main">
         <!-- ============== SECTION 1: DATASET OVERVIEW ============== -->
         <section class="card full-width" id="section-dataset">
             <div class="card-header">
-                <h2>📋 Dataset Overview</h2>
+                <h2>Dataset Overview</h2>
                 <span class="badge">Historical Data</span>
             </div>
             <p class="card-desc">Explore the sample customer dataset used for predictions.</p>
@@ -57,7 +58,7 @@
         <!-- ============== SECTION 2: SPENDING FORECAST ============== -->
         <section class="card full-width" id="section-spending">
             <div class="card-header">
-                <h2>📈 Spending Forecast</h2>
+                <h2>Spending Forecast</h2>
                 <span class="badge accent">Linear Regression</span>
             </div>
             <p class="card-desc">Predicted customer spending for the next 1 and 3 months.</p>
@@ -83,7 +84,7 @@
         <!-- ============== SECTION 3: LOYALTY SCORE ============== -->
         <section class="card full-width" id="section-loyalty">
             <div class="card-header">
-                <h2>🏆 Customer Loyalty Score</h2>
+                <h2>Customer Loyalty Score</h2>
                 <span class="badge green">RFM Model</span>
             </div>
             <p class="card-desc">Loyalty scores computed using Recency, Frequency, and Monetary analysis.</p>
@@ -97,7 +98,7 @@
         <!-- ============== SECTION 4: PRODUCT INTEREST ============== -->
         <section class="card full-width" id="section-interest">
             <div class="card-header">
-                <h2>🛒 New Product Interest Prediction</h2>
+                <h2>New Product Interest Prediction</h2>
                 <span class="badge purple">Logistic Regression</span>
             </div>
             <p class="card-desc">Probability of each customer purchasing a new product.</p>
@@ -122,7 +123,7 @@
         <!-- ============== SECTION 5: INSIGHTS ============== -->
         <section class="card full-width" id="section-insights">
             <div class="card-header">
-                <h2>💡 Customer Insights</h2>
+                <h2>Customer Insights</h2>
                 <span class="badge gold">AI Generated</span>
             </div>
             <p class="card-desc">Key insights derived from predictive models.</p>

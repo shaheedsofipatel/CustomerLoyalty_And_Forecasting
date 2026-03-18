@@ -11,8 +11,8 @@ const API = {
 };
 
 // Chart.js global defaults
-Chart.defaults.color = "#64748B";
-Chart.defaults.borderColor = "rgba(226,232,240,0.8)";
+Chart.defaults.color = "#6B7280";
+Chart.defaults.borderColor = "rgba(229,231,235,0.8)";
 Chart.defaults.font.family = "'Inter', sans-serif";
 
 // ─────────────────────── Helpers ───────────────────────
@@ -60,12 +60,12 @@ function renderSpendingDistChart(data) {
                 label: "Customers",
                 data: Object.values(buckets),
                 backgroundColor: [
-                    "rgba(14,165,233,0.75)",
-                    "rgba(101,163,13,0.75)",
-                    "rgba(124,58,237,0.6)",
-                    "rgba(202,138,4,0.65)",
-                    "rgba(220,38,38,0.6)",
-                    "rgba(14,165,233,0.5)",
+                    "rgba(239,68,68,0.7)",
+                    "rgba(59,130,246,0.7)",
+                    "rgba(34,197,94,0.7)",
+                    "rgba(34,197,94,0.6)",
+                    "rgba(59,130,246,0.6)",
+                    "rgba(239,68,68,0.6)",
                 ],
                 borderRadius: 8,
                 borderWidth: 0,
@@ -89,8 +89,8 @@ function renderCategoryPie(data) {
     });
 
     const colors = [
-        "#0EA5E9", "#65A30D", "#7C3AED", "#CA8A04",
-        "#DC2626", "#EA580C", "#0D9488",
+        "#3B82F6", "#22C55E", "#EF4444", "#F59E0B",
+        "#8B5CF6", "#06B6D4", "#EC4899",
     ];
 
     new Chart($("#chart-category-pie"), {
@@ -142,8 +142,8 @@ function renderSpendingLineChart(data) {
                 {
                     label: "Current Spending",
                     data: top.map((d) => d.current_monthly_spend),
-                    borderColor: "#0EA5E9",
-                    backgroundColor: "rgba(14,165,233,0.1)",
+                    borderColor: "#3B82F6",
+                    backgroundColor: "rgba(59,130,246,0.08)",
                     fill: true,
                     tension: 0.4,
                     pointRadius: 5,
@@ -152,8 +152,8 @@ function renderSpendingLineChart(data) {
                 {
                     label: "Predicted Next Month",
                     data: top.map((d) => d.predicted_next_month),
-                    borderColor: "#65A30D",
-                    backgroundColor: "rgba(101,163,13,0.1)",
+                    borderColor: "#22C55E",
+                    backgroundColor: "rgba(34,197,94,0.08)",
                     fill: true,
                     tension: 0.4,
                     borderDash: [6, 3],
@@ -189,16 +189,16 @@ function drawGauge(canvas, score, maxScore) {
     ctx.beginPath();
     ctx.arc(cx, cy, radius, startAngle, endAngle, false);
     ctx.lineWidth = 10;
-    ctx.strokeStyle = "rgba(226,232,240,0.8)";
+    ctx.strokeStyle = "rgba(229,231,235,0.8)";
     ctx.lineCap = "round";
     ctx.stroke();
 
     // Value arc
     let color;
-    if (score >= 70) color = "#65A30D";
-    else if (score >= 50) color = "#0EA5E9";
-    else if (score >= 30) color = "#CA8A04";
-    else color = "#DC2626";
+    if (score >= 70) color = "#22C55E";
+    else if (score >= 50) color = "#3B82F6";
+    else if (score >= 30) color = "#F59E0B";
+    else color = "#EF4444";
 
     ctx.beginPath();
     ctx.arc(cx, cy, radius, startAngle, sweepAngle, false);
@@ -256,10 +256,10 @@ function renderSegmentChart(data) {
                 label: "Customers",
                 data: Object.values(counts),
                 backgroundColor: [
-                    "rgba(101,163,13,0.75)",
-                    "rgba(14,165,233,0.75)",
-                    "rgba(220,38,38,0.65)",
-                    "rgba(202,138,4,0.65)",
+                    "rgba(34,197,94,0.75)",
+                    "rgba(59,130,246,0.7)",
+                    "rgba(245,158,11,0.7)",
+                    "rgba(239,68,68,0.65)",
                 ],
                 borderRadius: 8,
                 borderWidth: 0,
@@ -283,7 +283,7 @@ function renderInterestTable(data) {
     tbody.innerHTML = sorted
         .slice(0, 15)
         .map((r) => {
-            const color = r.interest_probability >= 60 ? "#65A30D" : r.interest_probability >= 40 ? "#CA8A04" : "#DC2626";
+            const color = r.interest_probability >= 60 ? "#22C55E" : r.interest_probability >= 40 ? "#3B82F6" : "#EF4444";
             return `<tr>
                 <td>${r.customer_id}</td>
                 <td>${r.favorite_category}</td>
@@ -298,10 +298,10 @@ function renderInterestBarChart(data) {
 
     const colors = sorted.map((d) =>
         d.interest_probability >= 60
-            ? "rgba(101,163,13,0.75)"
+            ? "rgba(34,197,94,0.75)"
             : d.interest_probability >= 40
-            ? "rgba(202,138,4,0.65)"
-            : "rgba(220,38,38,0.65)"
+            ? "rgba(59,130,246,0.7)"
+            : "rgba(239,68,68,0.65)"
     );
 
     new Chart($("#chart-interest-bar"), {

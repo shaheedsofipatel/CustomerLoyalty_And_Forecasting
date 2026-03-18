@@ -135,7 +135,7 @@ def generate_insights(df, spending_preds, loyalty_scores, interest_preds):
     sorted_spend = sorted(spending_preds, key=lambda x: x["predicted_next_month"], reverse=True)
     for c in sorted_spend[:3]:
         insights.append(
-            f"🔥 Customer {c['customer_id']} has high spending potential — predicted "
+            f"Customer {c['customer_id']} has high spending potential — predicted "
             f"${c['predicted_next_month']:.0f} next month."
         )
 
@@ -143,7 +143,7 @@ def generate_insights(df, spending_preds, loyalty_scores, interest_preds):
     sorted_interest = sorted(interest_preds, key=lambda x: x["interest_probability"], reverse=True)
     for c in sorted_interest[:3]:
         insights.append(
-            f"🛒 Customer {c['customer_id']} has a {c['interest_probability']:.0f}% chance "
+            f"Customer {c['customer_id']} has a {c['interest_probability']:.0f}% chance "
             f"of purchasing a new {c['favorite_category']} product."
         )
 
@@ -151,14 +151,14 @@ def generate_insights(df, spending_preds, loyalty_scores, interest_preds):
     at_risk = [c for c in loyalty_scores if c["segment"] == "At Risk"]
     for c in at_risk[:3]:
         insights.append(
-            f"⚠️ Customer {c['customer_id']} shows declining loyalty (score: {c['loyalty_score']}) "
+            f"Customer {c['customer_id']} shows declining loyalty (score: {c['loyalty_score']}) "
             f"and may require retention offers."
         )
 
     # Highly loyal
     highly_loyal = [c for c in loyalty_scores if c["segment"] == "Highly Loyal"]
     insights.append(
-        f"⭐ {len(highly_loyal)} customers are classified as Highly Loyal — "
+        f"{len(highly_loyal)} customers are classified as Highly Loyal — "
         f"consider exclusive rewards programs."
     )
 

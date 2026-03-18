@@ -1,24 +1,24 @@
 /* ===================================================================
-   Customer Loyalty Dashboard – Light Theme (White + Sky Blue + Lime Green)
+   Customer Loyalty Dashboard – Monochrome Theme (Black / White / Grey)
    =================================================================== */
 
 /* ---------- Variables ---------- */
 :root {
-    --bg-primary: #F8FAFC;
+    --bg-primary: #FFFFFF;
     --bg-card: #FFFFFF;
-    --bg-card-hover: #F1F5F9;
-    --primary: #0EA5E9;
-    --primary-light: #E0F2FE;
-    --accent: #65A30D;
-    --accent-light: #ECFCCB;
-    --purple: #7C3AED;
-    --gold: #CA8A04;
-    --danger: #DC2626;
-    --text: #1E293B;
-    --text-muted: #64748B;
-    --border: #E2E8F0;
+    --bg-card-hover: #F9FAFB;
+    --primary: #111827;
+    --primary-light: #F3F4F6;
+    --accent: #4B5563;
+    --accent-light: #F3F4F6;
+    --purple: #6B7280;
+    --gold: #9CA3AF;
+    --danger: #374151;
+    --text: #111827;
+    --text-muted: #6B7280;
+    --border: #E5E7EB;
     --radius: 16px;
-    --shadow: 0 4px 20px rgba(14, 165, 233, 0.08);
+    --shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -37,89 +37,84 @@ body {
 
 /* ---------- Scrollbar ---------- */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-primary); }
-::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+::-webkit-scrollbar-track { background: #F9FAFB; }
+::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
 
 /* ---------- Header ---------- */
 #dashboard-header {
-    background: linear-gradient(135deg, #0EA5E9 0%, #38BDF8 40%, #65A30D 100%);
-    border-bottom: 1px solid var(--border);
-    padding: 1.5rem 2.5rem 0;
+    background: #111827;
+    border-bottom: 1px solid #1F2937;
+    padding: 0 2.5rem;
     position: sticky;
     top: 0;
     z-index: 100;
-    backdrop-filter: blur(12px);
 }
 
-.header-content {
+.header-bar {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    gap: 0.25rem;
-    padding-bottom: 1rem;
+    justify-content: space-between;
+    height: 56px;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
 }
 
 .header-logo {
-    width: 64px;
-    height: 64px;
+    width: 36px;
+    height: 36px;
     object-fit: contain;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 6px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    animation: pulse 2s ease-in-out infinite;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
 }
 
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.06); }
+.header-brand:hover .header-logo {
+    transform: scale(1.08);
 }
 
 #dashboard-header h1 {
-    font-size: 1.75rem;
+    font-size: 1.2rem;
     font-weight: 800;
     color: #FFFFFF;
-    margin-top: 0.25rem;
-}
-
-#dashboard-header p {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 0.9rem;
-    margin-top: 0.1rem;
+    margin: 0;
 }
 
 /* ---------- Navigation ---------- */
 #main-nav {
-    max-width: 1400px;
-    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    gap: 0.25rem;
+    align-items: center;
+    gap: 0.35rem;
 }
 
 .nav-link {
-    padding: 0.65rem 1.25rem;
-    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
-    border-radius: 10px 10px 0 0;
+    border-radius: 8px;
     transition: background var(--transition), color var(--transition);
     white-space: nowrap;
 }
 
 .nav-link:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
     color: #FFFFFF;
 }
 
 .nav-link.active {
-    background: var(--bg-primary);
-    color: var(--primary);
+    background: rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
 }
 
 /* ---------- Main ---------- */
@@ -145,7 +140,7 @@ body {
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.12);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
 }
 
 @keyframes fadeUp {
@@ -168,7 +163,7 @@ body {
 .card-header h2 {
     font-size: 1.35rem;
     font-weight: 700;
-    color: var(--text);
+    color: #111827;
 }
 
 .card-desc {
@@ -183,15 +178,16 @@ body {
     font-weight: 600;
     padding: 0.3rem 0.75rem;
     border-radius: 50px;
-    background: var(--primary-light);
-    color: var(--primary);
+    background: #F3F4F6;
+    color: #374151;
     letter-spacing: 0.02em;
+    border: 1px solid #E5E7EB;
 }
 
-.badge.accent { background: var(--accent-light); color: var(--accent); }
-.badge.green  { background: var(--accent-light); color: var(--accent); }
-.badge.purple { background: #EDE9FE; color: var(--purple); }
-.badge.gold   { background: #FEF9C3; color: var(--gold); }
+.badge.accent { background: #F3F4F6; color: #374151; }
+.badge.green  { background: #F3F4F6; color: #374151; }
+.badge.purple { background: #F3F4F6; color: #374151; }
+.badge.gold   { background: #F3F4F6; color: #374151; }
 
 /* ---------- Tables ---------- */
 .table-wrapper {
@@ -208,14 +204,14 @@ table {
 }
 
 thead {
-    background: var(--primary-light);
+    background: #F9FAFB;
 }
 
 th {
     padding: 0.75rem 1rem;
     text-align: left;
     font-weight: 600;
-    color: var(--primary);
+    color: #111827;
     white-space: nowrap;
     border-bottom: 1px solid var(--border);
 }
@@ -232,7 +228,7 @@ tbody tr {
 }
 
 tbody tr:hover {
-    background: rgba(14, 165, 233, 0.05);
+    background: #F9FAFB;
 }
 
 tbody tr:last-child td {
@@ -248,7 +244,7 @@ tbody tr:last-child td {
 }
 
 .chart-box {
-    background: #F8FAFC;
+    background: #FAFAFA;
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.25rem;
@@ -281,7 +277,7 @@ canvas {
 }
 
 .gauge-card {
-    background: #F8FAFC;
+    background: #FAFAFA;
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1rem;
@@ -291,7 +287,7 @@ canvas {
 
 .gauge-card:hover {
     transform: scale(1.03);
-    border-color: var(--primary);
+    border-color: #9CA3AF;
 }
 
 .gauge-card canvas {
@@ -314,10 +310,10 @@ canvas {
     margin-top: 0.25rem;
 }
 
-.gauge-segment.highly-loyal   { background: var(--accent-light); color: var(--accent); }
-.gauge-segment.potential-loyal { background: var(--primary-light); color: var(--primary); }
-.gauge-segment.at-risk        { background: #FEE2E2; color: var(--danger); }
-.gauge-segment.new-customer   { background: #FEF9C3; color: var(--gold); }
+.gauge-segment.highly-loyal   { background: #E5E7EB; color: #111827; }
+.gauge-segment.potential-loyal { background: #F3F4F6; color: #374151; }
+.gauge-segment.at-risk        { background: #F3F4F6; color: #6B7280; }
+.gauge-segment.new-customer   { background: #F9FAFB; color: #9CA3AF; }
 
 /* ---------- Insights ---------- */
 #insights-list {
@@ -327,7 +323,7 @@ canvas {
 }
 
 .insight-card {
-    background: #F8FAFC;
+    background: #FAFAFA;
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.1rem 1.25rem;
@@ -338,9 +334,9 @@ canvas {
 }
 
 .insight-card:hover {
-    border-color: var(--primary);
+    border-color: #9CA3AF;
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(14, 165, 233, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 /* ---------- Footer ---------- */
@@ -355,11 +351,12 @@ footer {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
-    #dashboard-header { padding: 1rem 1rem 0; }
-    .header-logo { width: 48px; height: 48px; }
-    #dashboard-header h1 { font-size: 1.3rem; }
+    #dashboard-header { padding: 0 1rem; }
+    .header-bar { flex-wrap: wrap; height: auto; padding: 0.5rem 0; gap: 0.5rem; }
+    .header-logo { width: 30px; height: 30px; }
+    #dashboard-header h1 { font-size: 1rem; }
     #main-nav { flex-wrap: wrap; gap: 0.15rem; }
-    .nav-link { padding: 0.5rem 0.75rem; font-size: 0.75rem; }
+    .nav-link { padding: 0.35rem 0.6rem; font-size: 0.7rem; }
     #dashboard-main { padding: 0 1rem; }
     .chart-row { grid-template-columns: 1fr; }
     #gauge-container { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
